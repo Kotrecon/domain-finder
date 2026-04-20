@@ -1,0 +1,53 @@
+# Виртуальное окружение
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Секреты и конфиги
+.env
+*.local
+config.local.py
+
+# Логи и кэш
+logs/
+*.log
+.cache/
+*.sqlite3
+
+# IDE и редакторы
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ОС
+.DS_Store
+Thumbs.db
+
+# Тесты и покрытие
+.pytest_cache/
+htmlcov/
+.coverage

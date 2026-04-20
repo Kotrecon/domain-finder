@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Фронтенд для приложения Voice Hub" />
+    <meta name="author" content="Kotrecon" />
+    <title>Domain Finder</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <script>
+      document.documentElement.setAttribute("data-theme", "dark");
+    </script>
+    <!-- === ИКОНКИ === -->
+    <link
+      rel="icon"
+      href="../static/icons/favicons/favicon.ico"
+      sizes="32x32"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="../static/icons/favicons/favicon_256x256.png"
+      type="image/png"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="badge-top">AI DOMAIN FINDER</div>
+        <h1 class="title">Найди свой домен</h1>
+        <p class="subtitle">
+          Опишите ваш проект — LLM подберет имена доменов и приложение проверит
+          их доступность
+        </p>
+      </header>
+
+      <form id="finder-form" class="form">
+        <!-- Описание -->
+        <div class="form-group">
+          <label for="prompt" class="form-label">Описание проекта:</label>
+          <textarea
+            id="prompt"
+            class="form-textarea"
+            rows="3"
+            placeholder="Например: сервис для заметок"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Провайдер -->
+        <div class="form-group">
+          <label for="provider" class="form-label">Провайдер:</label>
+          <div class="select-wrapper">
+            <select id="provider" class="form-select">
+              <option value="openrouter">OpenRouter (Cloud)</option>
+              <option value="ollama">Ollama (Local)</option>
+            </select>
+            <div class="provider-status" id="provider-status">
+              <span class="status-icon"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Модель -->
+        <div class="form-group">
+          <label for="model" class="form-label">Модель:</label>
+          <div class="select-wrapper">
+            <select id="model" class="form-select" disabled>
+              <option value="">Сначала выберите провайдера</option>
+            </select>
+            <div class="provider-status" id="model-status">
+              <span class="status-icon"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Строка: Зоны + Количество -->
+        <div class="form-row">
+          <div class="input-card">
+            <div class="card-header">
+              <span class="card-title">Доменные зоны</span>
+              <button type="button" class="btn-clear" id="clear-tlds">
+                Снять все
+              </button>
+            </div>
+            <div class="tld-group" id="tld-group">
+              <label class="tld-chip"
+                ><input type="checkbox" name="tld" value=".com" checked /><span
+                  >.com</span
+                ></label
+              >
+              <label class="tld-chip"
+                ><input type="checkbox" name="tld" value=".net" checked /><span
+                  >.net</span
+                ></label
+              >
+              <label class="tld-chip"
+                ><input type="checkbox" name="tld" value=".org" checked /><span
+                  >.org</span
+                ></label
+              >
+              <label class="tld-chip"
+                ><input type="checkbox" name="tld" value=".io" /><span
+                  >.io</span
+                ></label
+              >
+              <label class="tld-chip"
+                ><input type="checkbox" name="tld" value=".ru" /><span
+                  >.ru</span
+                ></label
+              >
+              <label class="tld-chip"
+                ><input type="checkbox" name="tld" value=".store" /><span
+                  >.store</span
+                ></label
+              >
+              <label class="tld-chip"
+                ><input type="checkbox" name="tld" value=".shop" /><span
+                  >.shop</span
+                ></label
+              >
+            </div>
+          </div>
+
+          <div class="input-card">
+            <span class="card-title">Кол-во (1-20)</span>
+            <div class="stepper">
+              <button type="button" class="stepper-btn" id="count-minus">
+                −
+              </button>
+              <input
+                type="number"
+                id="count"
+                class="stepper-input"
+                value="10"
+                min="1"
+                max="20"
+                readonly
+              />
+              <button type="button" class="stepper-btn" id="count-plus">
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- КНОПКА ВОТ ЗДЕСЬ -->
+        <button type="submit" class="btn-primary" id="submit-btn">
+          Найти домены
+        </button>
+      </form>
+
+      <div id="status"></div>
+      <div id="results"></div>
+
+      <!-- Кнопка экспорта (скрыта по умолчанию) -->
+      <button type="button" class="btn-export" id="export-btn" disabled>
+        Экспорт в JSON
+      </button>
+
+      <footer class="footer">
+        <p>
+          Разработано @Kotrecon &bull; Powered by OpenRouter AI + Ollama + WHOIS
+        </p>
+      </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+  </body>
+</html>
