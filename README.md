@@ -57,7 +57,14 @@ LLM-агент для поиска свободных доменных имён.
 
 ## 🚀 Быстрый старт
 
-### 1. Клонирование и окружение
+### 1. Клонирование репозитория
+
+```powershell
+git clone https://github.com/Kotrecon/domain-finder.git
+cd domain-finder
+```
+
+### 2. Создание окружения и установка зависимостей
 
 ```powershell
 python -m venv .venv
