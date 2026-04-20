@@ -4,7 +4,11 @@
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://python.org)
 [![Status](https://img.shields.io/badge/status-stable-green.svg)](-)
 
+<div align="center">
+
 ![Web Interface](../domain_finder/src/domain_finder/docs/screenshot.png)
+
+</div>
 
 LLM-агент для поиска свободных доменных имён. Генерирует креативные названия на основе описания проекта и проверяет их доступность через WHOIS.
 
@@ -413,6 +417,15 @@ document.addEventListener("DOMContentLoaded", initMyComponent);
 
 ---
 
+## 👨‍💻 Автор
+
+**`@Kotrecon`**
+
+Архитектор решений из Санкт-Петербурга. Специализация: .NET, C#, JS, Python, AI/ML, RAG, Агенты, DevOps, GitHub, GitLab, CI/CD, АСУ ТП, промышленное ПО, DB, PostgreSQL.  
+[Telegram](https://t.me/Kotrecon) | [Email](mailto:ermakov_k@mail.ru)
+
+---
+
 ## 📄 Лицензия
 
 Распространяется под лицензией [MIT](LICENSE).  
@@ -423,41 +436,3 @@ document.addEventListener("DOMContentLoaded", initMyComponent);
 > 🚀 **Совет**: Веб-интерфейс готов к использованию. Для кастомизации правьте `app.css` и `app.js`. CLI-режим идеален для автоматизации и скриптов.
 
 ---
-
-## 📸 Инструкция: как добавить скриншот
-
-1. **Запустите приложение:**
-
-   ```powershell
-   python src/domain_finder/web/app.py
-   ```
-
-2. **Откройте в браузере:**
-
-   ```bash
-   http://127.0.0.1:5000
-   ```
-
-3. **Заполните форму и получите результаты** (чтобы показать все компоненты интерфейса)
-
-4. **Сделайте скриншот:**
-   - **Windows**: `Win + Shift + S` → выделите область → сохраните
-   - **macOS**: `Cmd + Shift + 4` → выделите область
-   - **Linux**: `PrintScreen` или используйте `gnome-screenshot`
-
-5. **Создайте папку и сохраните:**
-
-   ```powershell
-   mkdir docs
-   # Сохраните скриншот как docs/screenshot.png
-   ```
-
-6. **Закоммитьте:**
-
-   ```powershell
-   git add docs/screenshot.png
-   git commit -m "docs: add web interface screenshot"
-   git push
-   ```
-
-После этого скриншот автоматически отобразится в разделе **📸 Скриншот** выше. 🟣✨
