@@ -6,7 +6,7 @@
 
 <div align="center">
 
-![Web Interface](../domain_finder/src/domain_finder/docs/screenshot.png)
+![Web Interface](docs/screenshot.png)
 
 </div>
 
