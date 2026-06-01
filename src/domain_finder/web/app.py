@@ -5,7 +5,7 @@ import json
 import re
 import logging
 from datetime import datetime
-from flask_livereload import LiveReload
+# from flask_livereload import LiveReload
 
 from domain_finder.llm.providers.openrouter_provider import OpenRouterProvider
 from domain_finder.llm.providers.ollama_provider import OllamaProvider
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 # Бизнес-правило: debug=True только для локальной разработки, в продакшене — Gunicorn + reverse proxy
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-LiveReload(app)
+# LiveReload(app)
 
 # Маппинг провайдеров: новый провайдер добавляется в одну строку, без правки API-маршрутов
 PROVIDERS = {
