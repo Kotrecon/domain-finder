@@ -20,3 +20,6 @@ domain-finder = "domain_finder.main:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/domain_finder"]
+
+[tool.vercel]
+entrypoint = "src.domain_finder.web.app:app"
